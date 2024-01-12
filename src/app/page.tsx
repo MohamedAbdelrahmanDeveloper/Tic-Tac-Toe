@@ -5,12 +5,12 @@ import Info from "./components/Info";
 import Alert from "./components/Alert";
 
 export type CellsType = string[];
-export type TurnType = "circle" | "cross" | '';
+export type TurnType = "circle" | "cross";
 
 
-// const random = (length: number) => {
-//   return Math.floor(Math.random() * length)
-// }
+const random = (length: number) => {
+  return Math.floor(Math.random() * length)
+}
 
 const compose: number[][] = [
   [0, 1, 2],
@@ -25,7 +25,7 @@ const compose: number[][] = [
 
 
 export default function Home() {
-  // const player: number = random(2);
+  const player: number = random(2);
   const [cells, setCells] = useState<CellsType>([
     "",
     "",
@@ -38,11 +38,11 @@ export default function Home() {
     "",
   ]);
   const [turn, setTurn] = useState<TurnType>("circle");
-  const [isWin, setIsWin] = useState<TurnType>('')
+  const [isWin, setIsWin] = useState<TurnType | null>(null)
   const [noWin, setNoWin] = useState<boolean>(false)
 
   useEffect(() => {
-    // setTurn(player === 0 ? "circle" : "cross");
+    setTurn(player === 0 ? "circle" : "cross");
   }, []);
 
   useEffect(() => {
