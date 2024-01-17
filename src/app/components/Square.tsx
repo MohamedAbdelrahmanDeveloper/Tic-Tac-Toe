@@ -36,7 +36,7 @@ export default function Square({id, turn, setTurn, cells, setCells, isWin}: Squa
   return (
     <div className="w-2/6 h-2/6 text-7xl" onClick={handelClick}>
       <div className={`cursor-pointer w-full h-full flex justify-center items-center ${cells[id] === 'circle' && 'text-[#ff6169]'}`}>
-        {cells[id] === 'circle' && <Image className="rounded-full" width={100} height={100} src="/o.png" alt="o" /> || cells[id] === 'cross' && <Image className="rounded-full" width={100} height={100} src="/x.png" alt="x" />}
+        {cells[id] === 'circle' && <Image className="rounded-full w-16 md:w-24 h-16 md:h-24" width={100} height={100} src="/o.png" alt="o" /> || cells[id] === 'cross' && <Image className="rounded-full w-16 md:w-24 h-16 md:h-24" width={100} height={100} src="/x.png" alt="x" />}
       </div>
     </div>
   );
